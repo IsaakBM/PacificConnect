@@ -16,3 +16,10 @@ run <- function(data, outdir) {
 
 run(data = "/QRISdata/Q1216/BritoMorales/Project05d_Maya/Prioritisation/Problems/03a_ProblemsIUCNMico.rds", 
     outdir = "/QRISdata/Q1216/BritoMorales/Project05d_Maya/Prioritisation/Solutions/")
+
+
+# BlackMarlin_IUCN
+# HumpbackWhale_IUCN
+# Loggerhead_IUCN 
+# StripedMarlin_IUCN
+# Swordfish_IUCN 

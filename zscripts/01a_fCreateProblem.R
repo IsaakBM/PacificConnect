@@ -41,20 +41,15 @@ source("zscripts/00a_fCleaningDefining.R")
       add_default_solver(verbose = FALSE)
     saveRDS(p1, "Prioritisation/Problems/02c_ProblemsMiCONodesLong.rds")
     
-    
-    readRDS("Prioritisation/Problems/02b_ProblemsMiCONodes.rds") %>% 
-      add_relative_targets(0.20)
-    
-    
 ####################################################################################
 ####### IUCN + MiCO dataset
 ####################################################################################
   # Targets
     trgts <- seq(0.10, 0.90, 0.10)
     trgts_ls <- vector("list", length = length(trgts))
-    for(i in seq_along(trgts)) {
+    for(i in seq_along(trgts_ls)) {
       t1 <- trg_iucn(data = "Prioritisation/InputsFeatures/01b_IUCNLong.rds", iucn_df = "IUCN_REDLIST_2020.csv", iucn_target = trgts[i], nsp = nsp)
-      t2 <- trgt_Nodes <- readRDS("Prioritisation/InputsTargets/03c_TRGMiCONodesLong.rds")
+      t2 <- readRDS("Prioritisation/InputsTargets/03c_TRGMiCONodesLong.rds")
       trgts_ls[[i]] <- rbind(t1, t2)
     }
   # Problem
